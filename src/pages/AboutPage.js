@@ -57,8 +57,8 @@ const AboutPage = () => {
       <Row className='row-content'>
         <Col xs='12'>
           <h3>Community Partners</h3>
-          <PartnersList />
         </Col>
+        <PartnersList />
       </Row>
     </Container>
   )
