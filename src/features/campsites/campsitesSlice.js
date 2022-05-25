@@ -6,20 +6,21 @@ const initialState = {
 }
 
 const campsiteSlice = createSlice({
-    name: "campsites",
+    name: "campsites", // state.campsites.propertiesInInitialState
     initialState
 })
 
 export const campsitesReducer = campsiteSlice.reducer
 
-export const selectAllCampsites = () => {
-    return CAMPSITES
+export const selectAllCampsites = (state) => {
+    return state.campsites.campsitesArray
 }
 
-export const selectCampsiteById = (id) => {
-    return CAMPSITES.find((campsite) => campsite.id === parseInt(id))
+export const selectCampsiteById = (id) => (state) => {
+    // Inner function gets state from redux and campsite id can be passed in as parameter
+    return state.campsites.campsitesArray.find((campsite) => campsite.id === parseInt(id))
 }
 
-export const selectFeaturedCampsite = () => {
-    return CAMPSITES.find((campsite) => campsite.featured)
+export const selectFeaturedCampsite = (state) => {
+    return state.campsites.campsitesArray.find((campsite) => campsite.featured)
 }
