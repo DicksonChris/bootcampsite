@@ -5,6 +5,8 @@ import "./App.css"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 import { fetchCampsites } from "./features/campsites/campsitesSlice"
+import { fetchPartners } from "./features/partners/partnersSlice"
+import { fetchPromotions } from "./features/promotions/promotionsSlice"
 import AboutPage from "./pages/AboutPage"
 import CampsiteDetailPage from "./pages/CampsiteDetailPage"
 import CampsitesDirectoryPage from "./pages/CampsitesDirectoryPage"
@@ -16,6 +18,8 @@ function App() {
 
     useEffect(() => {
         dispatch(fetchCampsites())
+        dispatch(fetchPartners())
+        dispatch(fetchPromotions())
     }, [dispatch])
 
     return (
